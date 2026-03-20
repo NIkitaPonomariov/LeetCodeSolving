@@ -1,3 +1,17 @@
+
+class Solution:
+    def twoSum(self, nums: list[int], target:int)->list:
+        prevMap = {}
+        for i,n in enumerate(nums):
+            nnum = target - n
+            if nnum in prevMap:
+                return [prevMap[nnum], i]
+            else:
+                prevMap[n] = i
+        return
+        
+
+
 """
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -24,15 +38,3 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 
 """
-
-class Solution:
-    def twoSum(self, nums: list[int], target:int)->list:
-        prevMap = {}
-        for i,n in enumerate(nums):
-            nnum = target - n
-            if nnum in prevMap:
-                return [prevMap[nnum], i]
-            else:
-                prevMap[n] = i
-        return
-        
