@@ -1,10 +1,9 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         curr = head
-        k = head
-        while curr:
-            if curr == k.next:
-                k.next
+        while curr and curr.next:
+            if curr.val == curr.next.val:
+                curr.next = curr.next.next
             else:
-                curr.next = k.next
-        return curr
+                curr = curr.next
+        return head
