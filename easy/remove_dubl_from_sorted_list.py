@@ -1,5 +1,5 @@
 class Solution:
-    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def deleteDuplicates(self, head: list) -> list:
         curr = head
         while curr and curr.next:
             if curr.val == curr.next.val:
